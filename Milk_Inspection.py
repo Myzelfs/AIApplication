@@ -19,7 +19,8 @@ st.markdown(
                         Well we got the solution for you, this survey will help you determine if your milk is still drinkable. 
                         The survey will take about 3-5min to fill out and your result will be shown. 
                         The result can contain High - Medium - Low Grades. 
-                        When your milk is low grade it means you shouldnt drink it anymore and throw it away. 
+                        When your milk is low grade it means you shouldnt drink it anymore and throw it away, When your milk is medium it
+                        will still be drinkable but not as good as high grade milk. 
                         this test is available on all devices
                       
                       
