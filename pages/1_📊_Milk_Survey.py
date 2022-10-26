@@ -12,7 +12,6 @@ import streamlit.components.v1 as components
 @st.cache(allow_output_mutation=True)
 
 def train_model():
-    print("function train_model() is called (to verify the caching behavior of Streamlit)")
     df = pd.read_csv("./milknew.csv")
     df_original = df.copy(deep=True)
     
@@ -123,7 +122,6 @@ pred = forest.predict([[
     Colour(OptionColour)]])
 
 result = result(pred) 
-print(result)
 
 st.text('The predicted quality is: ' + result) 
     
