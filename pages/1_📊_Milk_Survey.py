@@ -6,18 +6,15 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 @st.cache(allow_output_mutation=True)
-
 def train_model():
     df = pd.read_csv("./milknew.csv")
-    df_original = df.copy(deep=True)
-    
-    df_original['Grade'] = pd.factorize(df_original['Grade'])[0]
 
-    X = df_original.copy()
+    df['Grade'] = pd.factorize(df['Grade'])[0]
+
+    X = df
     y = X.pop('Grade')
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=100)
-    print(X_train.shape, X_test.shape)
     
     forest = RandomForestClassifier(n_estimators=200, random_state=123)
     forest.fit(X_train.values, y_train.values)
@@ -100,7 +97,7 @@ OptionOdor = st.selectbox(
     ('No', 'Yes'))
 
 Optionfat = st.selectbox(
-    'is the milk chunky?',
+    'is the milk fat?',
     ('No', 'Yes'))
 
 OptionColour = st.selectbox(
